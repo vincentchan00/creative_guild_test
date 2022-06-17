@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('album', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->string('img');
+            $table->date('date');
+            $table->boolean('featured');
             $table->timestamps();
         });
     }
