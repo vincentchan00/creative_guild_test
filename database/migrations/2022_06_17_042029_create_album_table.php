@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('media', function (Blueprint $table) {
+        Schema::create('album', function (Blueprint $table) {
             $table->id();
-            $table->nullableMorphs('model');
-            $table->string('original_name')->nullable();
-            $table->string('group')->index();
-            $table->string('path');
-            $table->string('type');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media');
+        Schema::dropIfExists('album');
     }
 };
