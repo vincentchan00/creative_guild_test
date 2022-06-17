@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <title></title>
 </head>
-<body>
+<body style="background: linear-gradient(rgba(202,221,222,255), rgba(179,156,133,255));" class="vh-100 container">
 
 <div id="app">
     @yield('body')
@@ -15,6 +15,4 @@
 </body>
 
 <script src="{{ asset('js/app.js') }}"></script>
-
-@stack('post_js')
 </html>

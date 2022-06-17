@@ -23,6 +23,7 @@ class PhotographerRes extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'bio' => $this->bio,
+            'phone' => $this->phone,
             'profile_picture' => $media['path'],
             'album' => $album,
         ];
