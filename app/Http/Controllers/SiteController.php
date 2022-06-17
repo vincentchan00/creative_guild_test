@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PhotographerRes;
+use App\Models\Photographer;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
     //
-    public function Api_getLandscapes()
+    public function getPhotographer()
     {
-        $landscapes = json_decode(file_get_contents(storage_path() . "/app/private/landscapes.json"), true);
-
-        return $landscapes;
+        $photographerData = PhotographerRes::collection(Photographer::all());
+        return $photographerData;
     }
 
 }

@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('img');
             $table->date('date');
             $table->boolean('featured');
+            $table->bigInteger('photographer_id')->unsigned();     //  foreign key
             $table->timestamps();
+            $table->foreign('photographer_id')->references('id')->on('photographer');
         });
     }
 
