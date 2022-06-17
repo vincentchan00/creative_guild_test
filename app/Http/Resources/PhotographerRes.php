@@ -2,6 +2,9 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Album;
+use App\Models\Media;
+use App\Http\Resources\AlbumRes;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PhotographerRes extends JsonResource
@@ -14,11 +17,14 @@ class PhotographerRes extends JsonResource
      */
     public function toArray($request)
     {
+        $media = new MediaRes(Media::findOrFail($this->media));
+        $album = AlbumRes::collection(Album::where('photographer_id', '=' , $this->id)->get());
         return [
             'name' => $this->name,
             'email' => $this->email,
             'bio' => $this->bio,
-            'profile_picture' => $this->profile_picture,
+            'profile_picture' => $media['path'],
+            'album' => $album,
         ];
     }
 }

@@ -17,12 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->string('img');
+            $table->bigInteger('media')->unsigned();
             $table->date('date');
             $table->boolean('featured');
             $table->bigInteger('photographer_id')->unsigned();     //  foreign key
             $table->timestamps();
-            $table->foreign('photographer_id')->references('id')->on('photographer');
+            $table->foreign('photographer_id')->references('id')->on('photographer')->onDelete('cascade');
+
         });
     }
 

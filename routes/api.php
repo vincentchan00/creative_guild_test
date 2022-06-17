@@ -18,4 +18,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/landscapes/get', 'SiteController@Api_getLandscapes')->name('api.test.get');
+Route::get('/landscapes/get', 'SiteController@getPhotographer')->name('api.photographer.get');

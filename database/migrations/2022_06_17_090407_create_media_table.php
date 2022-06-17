@@ -15,10 +15,7 @@ return new class extends Migration
     {
         Schema::create('media', function (Blueprint $table) {
             $table->id();
-            $table->nullableMorphs('model');
-            $table->string('group')->index();
             $table->string('path');
-            $table->text('meta')->nullable();
             $table->timestamps();
         });
     }

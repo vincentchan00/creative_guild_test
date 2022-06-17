@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->text('bio');
-            $table->string('media');
+            $table->bigInteger('media')->unsigned();
             $table->timestamps();
+
         });
     }
 

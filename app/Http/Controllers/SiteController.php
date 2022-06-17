@@ -11,7 +11,14 @@ class SiteController extends Controller
     //
     public function getPhotographer()
     {
-        $photographerData = PhotographerRes::collection(Photographer::all());
+        $photographerData = PhotographerRes::collection(Photographer::all())->first();
+        return $photographerData;
+    }
+
+    public function getAlbum(Request $request, $id)
+    {
+        $photographerData = PhotographerRes::collection();
+
         return $photographerData;
     }
 
